@@ -1,0 +1,46 @@
+group 'com.javaccy'
+version '1.0-SNAPSHOT'
+
+
+apply plugin: 'java'
+apply plugin: "org.jetbrains.intellij"
+
+/*这种方式 只支持 gradle 2.1 以前版本*/
+/*plugins {
+    id "org.jetbrains.intellij" version "0.2.1"
+}*/
+/*这种方式支持所有的 gradle 版本*/
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+        maven {
+            url 'http://dl.bintray.com/jetbrains/intellij-plugin-service'
+        }
+    }
+    dependencies {
+        classpath "gradle.plugin.org.jetbrains.intellij.plugins:gradle-intellij-plugin:0.2.1"
+    }
+}
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+intellij {
+    //localPath '/Applications/IntelliJ\\ IDEA\\ CE.app'
+    version 'IC-163.10154.41'
+    plugins ['XXXXIntellijPlugin']
+    pluginName 'XXXXIntellijPlugin'
+    sandboxDirectory = project.rootDir.canonicalPath + "/.sandbox"
+}
+
+sourceSets {
+    main.java.srcDirs = ['src/main/java','src/main/gen']
+    main.resources.srcDir 'src/main/resources'
+
+    test.java.srcDir 'src/test/java'
+    test.resources.srcDir 'src/test/resources'
+}
