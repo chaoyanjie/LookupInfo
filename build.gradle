@@ -32,8 +32,8 @@ repositories {
 intellij {
     //localPath '/Applications/IntelliJ\\ IDEA\\ CE.app'
     version 'IC-163.10154.41'
-    plugins ['XXXXIntellijPlugin']
-    pluginName 'XXXXIntellijPlugin'
+    plugins ['LookupInfo']
+    pluginName 'LookupInfo'
     sandboxDirectory = project.rootDir.canonicalPath + "/.sandbox"
 }
 

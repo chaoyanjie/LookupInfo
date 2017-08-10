@@ -1,22 +1,19 @@
 <idea-plugin version="2">
-  <id>XXXXIntellijPlugin</id>
-  <name>XXXXIntellijPlugin</name>
+  <id>com.javaccy.plugins.LookupInfo</id>
+  <name>LookupInfo</name>
   <version>1.0</version>
-  <vendor email="javaccy@gmail.com" url="http://www.javaccy.com">JavaccyCompany</vendor>
+  <vendor email="javaccy@gmail.com" url="http://www.javaccy.com">Javaccy</vendor>
 
-  <description><![CDATA[
-      Enter short description for your plugin here.<br>
-      <em>most HTML tags may be used</em>
-    ]]></description>
+  <description>
+    这个插件用来显示，当前提示方法或属性 的注释内容
+  </description>
 
-  <change-notes><![CDATA[
-      Add change notes here.<br>
-      <em>most HTML tags may be used</em>
-    ]]>
+  <change-notes>
+    1.0版本
   </change-notes>
 
   <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
-  <idea-version since-build="145.0"/>
+  <idea-version since-build="163.0"/>
 
   <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
        on how to target different products -->
@@ -26,15 +23,12 @@
 
   <extensions defaultExtensionNs="com.intellij">
     <!-- Add your extensions here -->
+    <completion.contributor language="JAVA" implementationClass="com.javaccy.plugins.doc.tip.DocTip"/>
+    <!--<toolWindow id="IdeaLookupInfo" anchor="bottom" factoryClass="com.javaccy.plugins.doc.tip.ShowWindow"/>-->
   </extensions>
 
   <actions>
     <!-- Add your actions here -->
-    <action id="FF" class="FF" text="FF">
-      <add-to-group group-id="WindowMenu" anchor="first"/>
-    </action>
   </actions>
 
-  <application-components>
-  </application-components>
 </idea-plugin>

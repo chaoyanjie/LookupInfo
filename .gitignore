@@ -1,5 +1,8 @@
-/build
-/out
-/.sandbox
+build/
+out/
+.sandbox/
+classes/
+target/
+.gradle/
 /.idea
 *.iml
